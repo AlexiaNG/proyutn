@@ -1,6 +1,8 @@
 <?php
 	require_once 'core/init.php';
 
+	$buscar = $_GET["q"]; 
+
 	$sql = "SELECT 
 				p.id, p.producto, p.cantidad, p.precio. 
 				p.imagen, c.descripcion
@@ -8,11 +10,13 @@
 			 	productos as p, categorias as c
 			WHERE 
 				p.id_categoria = c.id
+			AND 
+				p.producto LIKE ?
 			ORDER BY 
 				p.id DESC
 			";
 
-	$productos = DB::getInstance()->consultar($sql,array())->results();
+	$productos = DB::getInstance()->consultar($sql,array("%".$buscar."%"))->results();
 ?>
 
 <!doctype html>
@@ -28,6 +32,7 @@
 	<br><br>
 	<form action="buscar.php" method="get">
 		Buscar: <input type="search" name="q" id="q">
+		<input type ="submit" name="btoBuscar" value="Buscar">
 	</form>
 		<table border=1 class="mi tabla">
 			<tr>

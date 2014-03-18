@@ -9,6 +9,8 @@
 	<br>
 	<a href="agregar_producto.php">Agregar Productos</a>
 	<br>
- 	<a href="registrar_usuario.php">Registrar Usuario</a>
+ 	<a href="listar_usuario.php">Listar Usuario</a>
+ 	<br>
+ 	<a href="agregar_usuario.php">Agregar Usuario</a>
 </body>
 </html>
