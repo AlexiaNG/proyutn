@@ -2,7 +2,8 @@
 	require_once 'core/init.php';
 
 	$sql = "SELECT 
-				p.id, p.producto, p.cantidad, p.precio. 
+				p.id, p.producto, p.cantidad, p.precio,
+	
 				p.imagen, c.descripcion
 			FROM 
 			 	productos as p, categorias as c
