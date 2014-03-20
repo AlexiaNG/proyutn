@@ -2,7 +2,7 @@
 
 	require_once 'core/init.php';
 	$categorias = DB::getInstance()->get('categorias')->results();
-	$id = $_GET["$id"];
+	$id = $_GET["id"];
 	$sql = "
 		SELECT * FROM productos 
 		WHERE id = ? 
