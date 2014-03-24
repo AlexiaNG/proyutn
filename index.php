@@ -1,6 +1,6 @@
 <?php
-	require_once 'core/init.php'
-
+	require_once 'core/init.php';
+	
 	if (!Session::exists("loginTrue") OR !Session::get("loginTrue") ){
 		Session::logout();
 		header("Location: login.php");

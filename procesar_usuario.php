@@ -1,6 +1,11 @@
 <?php
 	require_once 'core/init.php';
 
+	if (!Session::exists("loginTrue") OR !Session::get("loginTrue") ){
+		Session::flash("no","Tenés que registrarte primero.");
+		header("Location: login.php");
+	}
+
 	$bto = $_POST["btoUsuario"];
 	if (!empty($bto) and $bto == "Agregar") {
 		extract($_POST);

@@ -1,5 +1,11 @@
 <?php
 	require_once 'core/init.php';
+	
+	if (!Session::exists("loginTrue") OR !Session::get("loginTrue") ){
+		Session::flash("no","Tenés que registrarte primero.");
+		header("Location: login.php");
+	}	
+
 	$usuarios = DB::getInstance()->get('usuarios')->results();
 	$id = $_GET['id'];
 	$sql = "SELECT * FROM usuarios WHERE id = ?";

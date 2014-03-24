@@ -1,8 +1,8 @@
 <?php
 	require_once 'core/init.php';
 
-	if (!Session::exists("loginTrue") OR !Session::get("loginTrue")) {
-		Session::flash("no","ERROR");
+	if (!Session::exists("loginTrue") OR !Session::get("loginTrue") ){
+		Session::flash("no","Tenés que registrarte primero.");
 		header("Location: login.php");
 	}
 

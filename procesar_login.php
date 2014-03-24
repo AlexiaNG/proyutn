@@ -30,7 +30,7 @@
 		    Session::flash("ok","Bienvenido al sistema");
 		    header("Location: index.php");
 		}else{
-		    Session::flash("no","El usuario y clave son incorrectos");
+		    Session::flash("no","El usuario o clave son incorrectos");
 		    header("Location: login.php");
 		}
 	}
