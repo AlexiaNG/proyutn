@@ -3,8 +3,17 @@
 	require_once 'core/init.php';
 	$categorias = DB::getInstance()->get('categorias')->results();
 	$id = $_GET["id"];
+<<<<<<< HEAD
 	$sql = " SELECT * FROM productos WHERE id = ?";
 	$producto = DB::getInstance()->consultar($sql,array($id))->results();
+=======
+	$sql = "
+		SELECT * FROM productos 
+		WHERE id = ? 
+	";
+	$producto = DB::getInstance()->consultar($sql,array($id))->
+		results();
+>>>>>>> 0021aebaf446e3108db770d542973a65318080d9
 ?>
 
 <form action="procesar_producto.php" method="post">
