@@ -1,8 +1,14 @@
 <?php
 	require_once 'core/init.php';
 
+	if (!Session::exists("loginTrue") OR !Session::get("loginTrue")) {
+		Session::flash("no","ERROR");
+		header("Location: login.php");
+	}
+
 	$sql = "SELECT 
-				p.id, p.producto, p.cantidad, p.precio. 
+				p.id, p.producto, p.cantidad, p.precio,
+	
 				p.imagen, c.descripcion
 			FROM 
 			 	productos as p, categorias as c

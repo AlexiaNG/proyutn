@@ -26,7 +26,7 @@
 				<th>Privilegio</th>
 				<th>Token</th>
 			</tr>
-			<?php foreach($productos as $row) { ?>
+			<?php foreach($users as $row) { ?>
 			<tr>
 				<td> <?php echo $row->id ?> </td>
 				<td> <?php echo $row->usuario ?> </td>
